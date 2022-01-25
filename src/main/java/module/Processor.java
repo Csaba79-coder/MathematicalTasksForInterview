@@ -3,6 +3,7 @@ package module;
 import model.Combinatorics;
 import model.Factorial;
 import model.Fibonacci;
+import model.FibonacciLong;
 
 public class Processor {
 
@@ -55,5 +56,12 @@ public class Processor {
         System.out.println("Fibonacci with recursion: ");
 
         new Fibonacci().printFibonacciRecursion(10);
+
+        long startTime = System.nanoTime();
+        new FibonacciLong().printFibonacciRecursionLong(50);
+        long endTime = System.nanoTime();
+        long runTime = endTime - startTime;
+        double elapsedTimeInSecond = (double) runTime / 1_000_000_000;
+        System.out.println("The Fibonacci with recursion takes: " + elapsedTimeInSecond + " second");
     }
 }
